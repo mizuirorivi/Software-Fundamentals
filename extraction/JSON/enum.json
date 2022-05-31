@@ -1,0 +1,336 @@
+{
+  "what": "module", "name": "Main", "need_magic": false,
+  "need_dummy": false, "used_modules": [
+    
+  ],
+  "declarations": [
+    {
+      "what": "decl:ind", "name": "bool", "argnames": [
+        
+      ],
+      "constructors": [
+        {
+          "name": "True", "argtypes": [
+            
+          ]
+        }, {
+          "name": "False", "argtypes": [
+            
+          ]
+        }
+      ]
+    },
+    {
+      "what": "decl:term", "name": "negb",
+      "type": {
+        "what": "type:arrow",
+        "left": {
+          "what": "type:glob", "name": "bool", "args": [
+            
+          ]
+        }, "right": {
+          "what": "type:glob", "name": "bool", "args": [
+            
+          ]
+        }
+      },
+      "value": {
+        "what": "expr:lambda", "argnames": [
+          "b"
+        ],
+        "body": {
+          "what": "expr:case", "expr": {
+            "what": "expr:rel", "name": "b"
+          },
+          "cases": [
+            {
+              "what": "case",
+              "pat": {
+                "what": "pat:constructor", "name": "True", "argnames": [
+                  
+                ]
+              },
+              "body": {
+                "what": "expr:constructor", "name": "False", "args": [
+                  
+                ]
+              }
+            },
+            {
+              "what": "case",
+              "pat": {
+                "what": "pat:constructor", "name": "False", "argnames": [
+                  
+                ]
+              },
+              "body": {
+                "what": "expr:constructor", "name": "True", "args": [
+                  
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "what": "decl:term", "name": "andb",
+      "type": {
+        "what": "type:arrow",
+        "left": {
+          "what": "type:glob", "name": "bool", "args": [
+            
+          ]
+        },
+        "right": {
+          "what": "type:arrow",
+          "left": {
+            "what": "type:glob", "name": "bool", "args": [
+              
+            ]
+          }, "right": {
+            "what": "type:glob", "name": "bool", "args": [
+              
+            ]
+          }
+        }
+      },
+      "value": {
+        "what": "expr:lambda", "argnames": [
+          "b1", "b2"
+        ],
+        "body": {
+          "what": "expr:case", "expr": {
+            "what": "expr:rel", "name": "b1"
+          },
+          "cases": [
+            {
+              "what": "case",
+              "pat": {
+                "what": "pat:constructor", "name": "True", "argnames": [
+                  
+                ]
+              }, "body": {
+                "what": "expr:rel", "name": "b2"
+              }
+            },
+            {
+              "what": "case",
+              "pat": {
+                "what": "pat:constructor", "name": "False", "argnames": [
+                  
+                ]
+              },
+              "body": {
+                "what": "expr:constructor", "name": "False", "args": [
+                  
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "what": "decl:term", "name": "orb",
+      "type": {
+        "what": "type:arrow",
+        "left": {
+          "what": "type:glob", "name": "bool", "args": [
+            
+          ]
+        },
+        "right": {
+          "what": "type:arrow",
+          "left": {
+            "what": "type:glob", "name": "bool", "args": [
+              
+            ]
+          }, "right": {
+            "what": "type:glob", "name": "bool", "args": [
+              
+            ]
+          }
+        }
+      },
+      "value": {
+        "what": "expr:lambda", "argnames": [
+          "b1", "b2"
+        ],
+        "body": {
+          "what": "expr:case", "expr": {
+            "what": "expr:rel", "name": "b1"
+          },
+          "cases": [
+            {
+              "what": "case",
+              "pat": {
+                "what": "pat:constructor", "name": "True", "argnames": [
+                  
+                ]
+              },
+              "body": {
+                "what": "expr:constructor", "name": "True", "args": [
+                  
+                ]
+              }
+            },
+            {
+              "what": "case",
+              "pat": {
+                "what": "pat:constructor", "name": "False", "argnames": [
+                  
+                ]
+              }, "body": {
+                "what": "expr:rel", "name": "b2"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "what": "decl:term", "name": "nandb",
+      "type": {
+        "what": "type:arrow",
+        "left": {
+          "what": "type:glob", "name": "bool", "args": [
+            
+          ]
+        },
+        "right": {
+          "what": "type:arrow",
+          "left": {
+            "what": "type:glob", "name": "bool", "args": [
+              
+            ]
+          }, "right": {
+            "what": "type:glob", "name": "bool", "args": [
+              
+            ]
+          }
+        }
+      },
+      "value": {
+        "what": "expr:lambda", "argnames": [
+          "b1", "b2"
+        ],
+        "body": {
+          "what": "expr:case",
+          "expr": {
+            "what": "expr:apply",
+            "func": {
+              "what": "expr:global", "name": "andb"
+            },
+            "args": [
+              {
+                "what": "expr:rel", "name": "b1"
+              }, {
+                "what": "expr:rel", "name": "b2"
+              }
+            ]
+          },
+          "cases": [
+            {
+              "what": "case",
+              "pat": {
+                "what": "pat:constructor", "name": "True", "argnames": [
+                  
+                ]
+              },
+              "body": {
+                "what": "expr:constructor", "name": "False", "args": [
+                  
+                ]
+              }
+            },
+            {
+              "what": "case",
+              "pat": {
+                "what": "pat:constructor", "name": "False", "argnames": [
+                  
+                ]
+              },
+              "body": {
+                "what": "expr:constructor", "name": "True", "args": [
+                  
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "what": "decl:term", "name": "andb3",
+      "type": {
+        "what": "type:arrow",
+        "left": {
+          "what": "type:glob", "name": "bool", "args": [
+            
+          ]
+        },
+        "right": {
+          "what": "type:arrow",
+          "left": {
+            "what": "type:glob", "name": "bool", "args": [
+              
+            ]
+          },
+          "right": {
+            "what": "type:arrow",
+            "left": {
+              "what": "type:glob", "name": "bool", "args": [
+                
+              ]
+            },
+            "right": {
+              "what": "type:glob", "name": "bool", "args": [
+                
+              ]
+            }
+          }
+        }
+      },
+      "value": {
+        "what": "expr:lambda", "argnames": [
+          "b1", "b2", "b3"
+        ],
+        "body": {
+          "what": "expr:apply",
+          "func": {
+            "what": "expr:global", "name": "andb"
+          },
+          "args": [
+            {
+              "what": "expr:apply",
+              "func": {
+                "what": "expr:global", "name": "andb"
+              },
+              "args": [
+                {
+                  "what": "expr:rel", "name": "b1"
+                }, {
+                  "what": "expr:rel", "name": "b2"
+                }
+              ]
+            },
+            {
+              "what": "expr:apply",
+              "func": {
+                "what": "expr:global", "name": "andb"
+              },
+              "args": [
+                {
+                  "what": "expr:rel", "name": "b2"
+                }, {
+                  "what": "expr:rel", "name": "b3"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
