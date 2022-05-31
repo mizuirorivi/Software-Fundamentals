@@ -33,4 +33,4 @@ Proof. simpl. reflexivity. Qed.
 Require Extraction.
 (* Extraction Language: Haskell *)
 Extraction Language Haskell.
-Extraction "../extraction/bool.hs bool.
+Extraction "../extraction/bool.hs" bool negb andb orb.
