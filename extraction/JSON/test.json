@@ -1,0 +1,134 @@
+{
+  "what": "module", "name": "Main", "need_magic": false, "need_dummy": false,
+  "used_modules": [
+    
+  ],
+  "declarations": [
+    {
+      "what": "decl:ind", "name": "day", "argnames": [
+        
+      ],
+      "constructors": [
+        {
+          "name": "Monday", "argtypes": [
+            
+          ]
+        }, {
+          "name": "Tuesday", "argtypes": [
+            
+          ]
+        }, {
+          "name": "Wednesday", "argtypes": [
+            
+          ]
+        }, {
+          "name": "Thursday", "argtypes": [
+            
+          ]
+        }, {
+          "name": "Friday", "argtypes": [
+            
+          ]
+        }, {
+          "name": "Saturday", "argtypes": [
+            
+          ]
+        }, {
+          "name": "Sunday", "argtypes": [
+            
+          ]
+        }
+      ]
+    },
+    {
+      "what": "decl:term", "name": "next_weekday",
+      "type": {
+        "what": "type:arrow",
+        "left": {
+          "what": "type:glob", "name": "day", "args": [
+            
+          ]
+        }, "right": {
+          "what": "type:glob", "name": "day", "args": [
+            
+          ]
+        }
+      },
+      "value": {
+        "what": "expr:lambda", "argnames": [
+          "d"
+        ],
+        "body": {
+          "what": "expr:case", "expr": {
+            "what": "expr:rel", "name": "d"
+          },
+          "cases": [
+            {
+              "what": "case",
+              "pat": {
+                "what": "pat:constructor", "name": "Monday", "argnames": [
+                  
+                ]
+              },
+              "body": {
+                "what": "expr:constructor", "name": "Tuesday", "args": [
+                  
+                ]
+              }
+            },
+            {
+              "what": "case",
+              "pat": {
+                "what": "pat:constructor", "name": "Tuesday", "argnames": [
+                  
+                ]
+              },
+              "body": {
+                "what": "expr:constructor", "name": "Wednesday", "args": [
+                  
+                ]
+              }
+            },
+            {
+              "what": "case",
+              "pat": {
+                "what": "pat:constructor", "name": "Wednesday",
+                "argnames": [
+                  
+                ]
+              },
+              "body": {
+                "what": "expr:constructor", "name": "Thursday", "args": [
+                  
+                ]
+              }
+            },
+            {
+              "what": "case",
+              "pat": {
+                "what": "pat:constructor", "name": "Thursday", "argnames": [
+                  
+                ]
+              },
+              "body": {
+                "what": "expr:constructor", "name": "Friday", "args": [
+                  
+                ]
+              }
+            },
+            {
+              "what": "case", "pat": {
+                "what": "pat:wild"
+              },
+              "body": {
+                "what": "expr:constructor", "name": "Monday", "args": [
+                  
+                ]
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

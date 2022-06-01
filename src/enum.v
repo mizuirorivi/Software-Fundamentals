@@ -65,17 +65,18 @@ Proof. simpl. reflexivity. Qed.
 (* Haskell への エクスポート *)
 Require Extraction.
 Extraction Language Haskell.
-Extraction "../extraction/enum.hs" bool negb orb andb nandb andb3.
+Extraction "../extraction/Haskell/enum.hs" bool negb orb andb nandb andb3.
 (**************************)
 
 (* Ocaml への エクスポート *)
 Require Extraction.
 Extraction Language OCaml.
-Extraction "../extraction/enum.ml" bool negb orb andb nandb andb3.
+Extraction "../extraction/Ocaml/enum.ml" bool negb orb andb nandb andb3.
 (**************************)
 
-(* JSON への エクスポート *)
+(* JSON への エクスポート *)ls
+  
 Require Extraction.
 Extraction Language JSON.
-Extraction "../extraction/enum.json" bool negb orb andb nandb andb3.
+Extraction "../extraction/JSON/enum.json" bool negb orb andb nandb andb3.
 (**************************)

@@ -27,3 +27,21 @@ Example test_next_weekday:
 Proof. simpl. reflexivity. Qed.
 
 
+(* Haskell への エクスポート *)
+Require Extraction.
+Extraction Language Haskell.
+Extraction "../extraction/Haskell/test.hs" day next_weekday.
+(**************************)
+
+(* Ocaml への エクスポート *)
+Require Extraction.
+Extraction Language OCaml.
+Extraction "../extraction/Ocaml/test.ml" day next_weekday.
+(**************************)
+
+(* JSON への エクスポート *)
+  
+Require Extraction.
+Extraction Language JSON.
+Extraction "../extraction/JSON/test.json" day next_weekday.
+(**************************)
