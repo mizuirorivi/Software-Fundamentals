@@ -1,0 +1,21 @@
+Module PlayGlound_proof.
+From Coq Require Import Unicode.Utf8.
+Inductive nat : Type :=
+  | O : nat
+  | S : nat -> nat.
+
+Fixpoint plus (n : nat) (m : nat) : nat :=
+  match n with
+    | O => m
+    | S n' => S (plus n' m)
+  end.
+
+
+
+Notation "x + y" := (plus x y) (at level 50, left associativity) : nat_scope.
+
+Check((0 + 1 ) + 1).
+Theorem plus_O_n : ∀ n:nat, 0 + n = n.
+
+Proof.
+  simpl. reflexivity. Qed.

@@ -1,0 +1,30 @@
+{
+  "what": "module", "name": "Main", "need_magic": false, "need_dummy": false,
+  "used_modules": [
+    
+  ],
+  "declarations": [
+    {
+      "what": "decl:ind", "name": "nat", "argnames": [
+        
+      ],
+      "constructors": [
+        {
+          "name": "O", "argtypes": [
+            
+          ]
+        },
+        {
+          "name": "S",
+          "argtypes": [
+            {
+              "what": "type:glob", "name": "nat", "args": [
+                
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
